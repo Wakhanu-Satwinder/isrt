@@ -38,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1","localhost"]
+ALLOWED_HOSTS = ["127.0.0.1","localhost","https://isr-rh3l.onrender.com"]
 
 
 # Application definition
@@ -155,7 +155,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'staAdd your Vercel deployment URL to ALLOWED_HOSTS.')]
+#STATICFILES_DIRS=[os.path.join(BASE_DIR,'staAdd your Vercel deployment URL to ALLOWED_HOSTS.')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
