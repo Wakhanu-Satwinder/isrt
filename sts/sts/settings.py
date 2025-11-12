@@ -200,7 +200,8 @@ ACCOUNT_UNIQUE_EMAIL=True
 SESSION_COOKIE_HTTPONLY=False
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
+    '''http://localhost:3000','''
+    'https://isrts.netlify.app/'
 ]
 CORS_ALLOW_ALL_ORIGINS=True
 '''CORS_ALLOW_CREDENTIALS=True
