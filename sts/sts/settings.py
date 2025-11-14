@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
+import dj_database_url
+from decouple import config
+
 from pathlib import Path
 from datetime import datetime,timedelta
 import os
@@ -22,7 +25,7 @@ environ.Env.read_env()
 
 SECRET_KEY=os.getenv('SECRET_KEY')
 DEBUG=os.getenv('DEBUG')
-DATABASE_URL=os.getenv('DATABASE_URL')
+#DATABASE_URL=os.getenv('DATABASE_URL')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -107,7 +110,7 @@ WSGI_APPLICATION = 'sts.wsgi.application'
     }
 }'''
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE':env('DB_ENGINE'),
         'NAME': env('DB_NAME'), 
@@ -116,6 +119,10 @@ DATABASES = {
         'HOST':env('DB_HOST'),  
         'PORT':env('DB_PORT'),           
     },
+    }'''
+
+DATABASES = {
+        'default': dj_database_url.parse(config('DATABASE_URL'))
     }
 
 
@@ -200,6 +207,7 @@ ACCOUNT_UNIQUE_EMAIL=True
 SESSION_COOKIE_HTTPONLY=False
 
 CORS_ALLOWED_ORIGINS = [
+    'https://isrts.netlify.app',
     'http://localhost:3000',
 ]
 CORS_ALLOW_ALL_ORIGINS=True
