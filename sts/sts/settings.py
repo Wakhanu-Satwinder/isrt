@@ -23,7 +23,8 @@ load_dotenv()
 
 
 env=environ.Env()
-environ.Env.read_env()
+#environ.Env.read_env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY=os.getenv('SECRET_KEY')
 DEBUG=os.getenv('DEBUG')
