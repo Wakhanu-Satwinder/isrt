@@ -18,6 +18,8 @@ from decouple import config
 import psycopg2
 import environ
 from dotenv import load_dotenv
+
+SECRET_KEY=config('SECRET_KEY')
 load_dotenv()
 
 
@@ -26,7 +28,7 @@ env=environ.Env()
 #environ.Env.read_env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-SECRET_KEY=os.getenv('SECRET_KEY')
+
 DEBUG=os.getenv('DEBUG')
 DATABASE_URL=os.getenv('DATABASE_URL')
 conn = psycopg2.connect(DATABASE_URL)
