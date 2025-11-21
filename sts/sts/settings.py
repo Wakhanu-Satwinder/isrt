@@ -45,7 +45,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://isr-4iu1.onrender.com"]
+ALLOWED_HOSTS = ['https://isr-4iu1.onrender.com']
 
 
 # Application definition
@@ -125,10 +125,16 @@ WSGI_APPLICATION = 'sts.wsgi.application'
     },
     }'''
 
-DATABASES = {
+'''DATABASES = {
         'default': dj_database_url.parse(config('DATABASE_URL'))
-    }
+    }'''
 
+DATABASES ={
+    'default':dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
