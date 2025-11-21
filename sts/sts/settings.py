@@ -9,13 +9,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
+from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 import dj_database_url
 from decouple import config
 
-from pathlib import Path
+
 from datetime import datetime,timedelta
 import os
 import psycopg2
