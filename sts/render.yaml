@@ -1,0 +1,24 @@
+services:
+  -type:web
+   name:sts
+   env:python
+   buildCommand:.render_build.sh
+   startCommand:"gunicorn sts.wsgi:application --bind 0.0.0.0:$PORT"
+   directory:sts
+
+   envVars:
+      -key:DATABASE_URL
+       fromDatabase:
+         name=strial
+         property:connectionString
+      -key:SECRET_KEY
+       generateValue:true
+      -key:DEBUG
+       value:"False"
+   routes:
+      -type:http
+       route:/
+  -type:pgsql
+   name:strial
+   plan:free
+   version:14
