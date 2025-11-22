@@ -22,8 +22,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
-
 env=environ.Env()
 #environ.Env.read_env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
@@ -56,7 +54,7 @@ conn = psycopg2.connect(DATABASE_URL)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://isr-4iu1.onrender.com']
+ALLOWED_HOSTS = ['isr-4iu1.onrender.com']
 
 
 # Application definition
