@@ -33,6 +33,11 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 DEBUG=os.getenv('DEBUG')
 SECRET_KEY=os.getenv('SECRET_KEY')
 
+if not SECRET_KEY:
+    
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'pp5+1hb_+$r4slrjp%pb3id04pjoe2925^azro6s_qaq8wv3&#') #
+    pass
+
 DATABASE_URL=os.getenv('DATABASE_URL')
 conn = psycopg2.connect(DATABASE_URL)
 
