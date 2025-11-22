@@ -54,7 +54,7 @@ conn = psycopg2.connect(DATABASE_URL)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['isr-4iu1.onrender.com']
+ALLOWED_HOSTS = ['*.onrender.com']
 
 
 # Application definition
